@@ -8,7 +8,9 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Poppins', 'sans-serif'],
+        Poppins: ['Poppins', 'serif'],
+        Montserrat: ['Montserrat', 'serif'],
+        OpenSans: ['Open Sans', 'serif',]
       },
       colors: {
         primary: "#9C6644",
