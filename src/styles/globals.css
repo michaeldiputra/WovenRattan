@@ -21,7 +21,7 @@ body {
 }
 
 .landing-container{
-  @apply  px-5 md:px-12 lg:px-16 xl:px-20;
+  @apply  flex justify-center px-5 md:px-12 lg:px-16 xl:px-20 ;
 }
 .text-wr6xl{
     @apply text-4xl sm:text-5xl md:text-5xl lg:text-6xl;

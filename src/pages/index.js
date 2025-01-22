@@ -3,6 +3,8 @@ import pictureBgHome from "../../public/landing/picture-bg-home.svg";
 import briefcase from "../../public/landing/briefcase.svg";
 import leaf from "../../public/landing/leaf.svg";
 import star from "../../public/landing/star.svg";
+import productvector from "../../public/landing/product-vector.svg";
+import downarrow from "../../public/landing/down-arrow.svg";
 
 export default function Home() {
   return (
@@ -60,6 +62,25 @@ export default function Home() {
               <p className="text-white font-medium text-wr2xl">Aesthetic</p>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="landing-container py-7">
+        <div className="max-w-7xl w-full flex flex-col items-center">
+          <div className="flex gap-10 max-h-min items-center mb-7">
+            <Image src={productvector} alt="vector" className="" />
+            <h5 className="text-primary font-semibold text-wr3xl">Product</h5>
+            <Image src={productvector} alt="vector" className="scale-x-[-1]" />
+          </div>
+          <div className="grid grid-cols-3 gap-8 w-full px-9 mb-7">
+            <div className="h-96 rounded-3xl bg-[#E6CCB2] w-full"></div>
+            <div className="h-96 rounded-3xl bg-[#E6CCB2] w-full"></div>
+            <div className="h-96 rounded-3xl bg-[#E6CCB2] w-full"></div>
+          </div>
+          <button className="flex">
+            <p className="text-primary font-semibold text-wrXl pr-2">Show More</p>
+            <Image src={downarrow} alt="down arrow" className="w-5"/>
+          </button>
         </div>
       </section>
 
