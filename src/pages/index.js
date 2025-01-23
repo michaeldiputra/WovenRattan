@@ -128,6 +128,22 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="landing-container">
+        <div className="max-w-7xl w-full px-11 flex">
+          <h5 className="text-primary font-bold text-wr4xl font-Montserrat w-2/5 text-balance mr-16">what do they say about our products?</h5>
+          <div className="flex ">
+            <div className="rounded-full overflow-hidden flex justify-center items-center size-16">
+              <Image src={"/landing/rating/1.jpg"} width={100} height={100} className="w-full min-h-full object-cover"/>
+            </div>
+            <div>
+              <p className="font-bold text-wrSm font-Montserrat">Nelson mandela</p>
+              <p className="font-bold text-wrXs font-Montserrat">12 November 2025</p>
+              <p className="font-bold text-wrSm font-Montserrat">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices placerat fermentum. Maecenas faucibus scelerisque mi id gravida. In a lorem a turpis aliquet sodales. Sed a velit pharetra, luctus nunc malesuada, posuere risus.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
     </>
   );
 }

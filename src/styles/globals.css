@@ -47,3 +47,9 @@ body {
 .text-wrBase{
     @apply text-xs sm:text-sm md:text-sm lg:text-base;
 }
+.text-wrSm{
+  @apply text-[65rem] sm:text-xs md:text-xs lg:text-sm;
+}
+.textwrXs{
+  @apply text-[60rem] sm:text-[65rem] md:text-[65rem] lg:text-xs;
+}
