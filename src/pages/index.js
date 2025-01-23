@@ -1,4 +1,6 @@
+import { useState } from "react";
 import Image from "next/image";
+import Link from 'next/link'
 import pictureBgHome from "../../public/landing/picture-bg-home.svg";
 import briefcase from "../../public/landing/briefcase.svg";
 import leaf from "../../public/landing/leaf.svg";
@@ -7,9 +9,16 @@ import productvector from "../../public/landing/product-vector.svg";
 import downarrow from "../../public/landing/down-arrow.svg";
 
 export default function Home() {
+  const productImages = ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg', '7.jpg', '8.jpg', '9.jpg', '10.jpg'];
+
+  const [visibleCount, setVisibleCount] = useState(3); // Mulai dari 3 gambar
+
+  const showHandler = () => {
+    setVisibleCount((prevCount) => (prevCount === 3 ? 9 : 3)); // Tampilkan hingga 9 gambar
+  };
   return (
     <>
-      
+
       <section className="landing-container overflow-hidden">
         <div className="max-w-7xl w-full">
           <div className="flex max-h-svh h-screen pt-16 w-full justify-between items-center">
@@ -68,22 +77,54 @@ export default function Home() {
       <section className="landing-container py-7">
         <div className="max-w-7xl w-full flex flex-col items-center">
           <div className="flex justify-between gap-2 items-center mb-7 w-full max-w-xs md:max-w-sm mx-14">
-            <Image src={productvector} alt="vector" className="max-w-[25%] sm:max-w-[20%] md:max-w-[25%] lg:max-w-[30%] xl:max-w-full h-auto flex-shrink-0" />
+            <Image src={productvector} width={100} height={100} alt="vector" className="max-w-[25%] sm:max-w-[20%] md:max-w-[25%] lg:max-w-[30%] xl:max-w-full h-auto flex-shrink-0" />
             <h5 className="text-primary font-semibold text-wr3xl">Product</h5>
-            <Image src={productvector} alt="vector" className="scale-x-[-1] max-w-[25%] sm:max-w-[20%] md:max-w-[25%] lg:max-w-[30%] xl:max-w-full h-auto flex-shrink-0" />
+            <Image src={productvector} width={100} height={100} alt="vector" className="scale-x-[-1] max-w-[25%] sm:max-w-[20%] md:max-w-[25%] lg:max-w-[30%] xl:max-w-full flex-shrink-0" />
           </div>
-          <div className="overflow-y-auto w-full">
-            <div className="grid min-w-[1024px] grid-cols-3 gap-2 md:gap-4 lg:gap-6 xl:gap-8 w-full px-9 mb-7">
-              <div className="h-96 rounded-3xl bg-[#E6CCB2] w-full"></div>
-              <div className="h-96 rounded-3xl bg-[#E6CCB2] w-full"></div>
-              <div className="h-96 rounded-3xl bg-[#E6CCB2] w-full"></div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 md:gap-4 lg:gap-6 xl:gap-8 w-full mb-2.5 sm:mb-7">
+            {productImages.slice(0, visibleCount).map((productImage, index) => (
+              <div key={index} className="max-h-96 rounded-3xl overflow-hidden flex justify-center items-center">
+                <Image
+                  src={`/landing/product/${productImage}`}
+                  alt={`Product ${index + 1}`}
+                  width={500} height={500}
+                  objectFit="cover"
+                  className="rounded-3xl w-full min-h-full object-cover"
+                  priority={index < 3} // Prioritize loading for the first 3 images
+                />
+              </div>
+            ))}
+          </div>
+          {visibleCount == 3 && (
+            <div className="flex w-full justify-end sm:justify-center">
+              <button
+                className="items-center text-primary font-semibold text-wrXl hidden sm:flex"
+                onClick={showHandler}
+              >
+                Show More
+                <Image src={downarrow} alt="down arrow" width={100} height={100} className={`w-5 ml-2 transform transition-transform ${visibleCount === 3 ? "rotate-0" : "rotate-180"
+                  }`} />
+              </button>
+              <Link href="/products" className="items-center text-primary font-semibold text-wrXl sm:hidden">
+                See All Products
+              </Link>
             </div>
-          </div>
-
-          <button className="flex">
-            <p className="text-primary font-semibold text-wrXl pr-2">Show More</p>
-            <Image src={downarrow} alt="down arrow" className="w-5" />
-          </button>
+          )}
+          {visibleCount == 9 && (
+            <div className="flex w-full justify-between">
+              <button
+                className="items-center text-primary font-semibold text-wrXl flex"
+                onClick={showHandler}
+              >
+                Show Less
+                <Image src={downarrow} alt="down arrow" width={100} height={100} className={`w-5 ml-2 transform transition-transform ${visibleCount === 3 ? "rotate-0" : "rotate-180"
+                  }`} />
+              </button>
+              <Link href="/products" className="items-center text-primary font-semibold text-wrXl ">
+                See All Products
+              </Link>
+            </div>
+          )}
         </div>
       </section>
 
