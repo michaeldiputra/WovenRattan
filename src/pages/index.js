@@ -23,7 +23,7 @@ export default function Home() {
         <div className="max-w-7xl w-full">
           <div className="flex max-h-svh h-screen pt-16 w-full justify-between items-center">
             <div className="flex flex-col w-full max-w-md -mt-28">
-              <h1 className="text-secondary text-wr6xl font-extrabold text-pretty !leading-tight uppercase pb-8">Lorem ipsum dolor sit amet</h1>
+              <h1 className="text-secondary text-wr6xl font-extrabold text-pretty leading-tight! uppercase pb-8">Lorem ipsum dolor sit amet</h1>
               <button className="bg-[#B08968] text-white w-fit font-extrabold py-3 px-4 rounded-2xl">Learn More</button>
             </div>
             <div className="min-w-96 h-fit flex items-center -mr-60 lg:-mr-72 xl:-mr-80">
@@ -77,9 +77,9 @@ export default function Home() {
       <section className="landing-container py-7">
         <div className="max-w-7xl w-full flex flex-col items-center">
           <div className="flex justify-between gap-2 items-center mb-7 w-full max-w-xs md:max-w-sm mx-14">
-            <Image src={productvector} width={100} height={100} alt="vector" className="max-w-[25%] sm:max-w-[20%] md:max-w-[25%] lg:max-w-[30%] xl:max-w-full h-auto flex-shrink-0" />
+            <Image src={productvector} width={100} height={100} alt="vector" className="max-w-[25%] sm:max-w-[20%] md:max-w-[25%] lg:max-w-[30%] xl:max-w-full h-auto shrink-0" />
             <h5 className="text-primary font-semibold text-wr3xl">Product</h5>
-            <Image src={productvector} width={100} height={100} alt="vector" className="scale-x-[-1] max-w-[25%] sm:max-w-[20%] md:max-w-[25%] lg:max-w-[30%] xl:max-w-full flex-shrink-0" />
+            <Image src={productvector} width={100} height={100} alt="vector" className="scale-x-[-1] max-w-[25%] sm:max-w-[20%] md:max-w-[25%] lg:max-w-[30%] xl:max-w-full shrink-0" />
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 md:gap-4 lg:gap-6 xl:gap-8 w-full mb-2.5 sm:mb-7">
             {productImages.slice(0, visibleCount).map((productImage, index) => (
