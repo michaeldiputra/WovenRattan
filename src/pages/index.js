@@ -9,8 +9,8 @@ import downarrow from "../../public/landing/down-arrow.svg";
 export default function Home() {
   return (
     <>
-
-      <section className="flex justify-center px-5 md:px-12 lg:px-16 xl:px-20 overflow-x-hidden">
+      
+      <section className="landing-container overflow-hidden">
         <div className="max-w-7xl w-full">
           <div className="flex max-h-svh h-screen pt-16 w-full justify-between items-center">
             <div className="flex flex-col w-full max-w-md -mt-28">
@@ -24,7 +24,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="flex justify-center px-5 md:px-12 lg:px-16 xl:px-20 overflow-x-hidden">
+      <section className="landing-container">
         <div className="max-w-7xl w-full">
           <div className="flex justify-center py-20">
             <div className="flex flex-col-reverse md:flex-row max-w-4xl w-full bg-[#B08968] p-3 sm:p-5 md:p-7 bg-[url('/landing/rattan-bg-aboutus.png')] bg-no-repeat bg-right-bottom	">
@@ -45,7 +45,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="flex justify-center px-5 md:px-12 lg:px-16 xl:px-20 overflow-x-hidden bg-primary">
+      <section className="landing-container bg-primary">
         <div className="max-w-7xl w-full flex flex-col items-center py-4">
           <h5 className="capitalize mb-9 font-Montserrat font-bold text-wr3xl text-white text-center text-pretty">reason to choose us</h5>
           <div className="flex max-w-md sm:max-w-xl lg:max-w-2xl justify-around w-full px-2.5 flex-wrap items-center gap-x-10 gap-y-7">
@@ -67,19 +67,22 @@ export default function Home() {
 
       <section className="landing-container py-7">
         <div className="max-w-7xl w-full flex flex-col items-center">
-          <div className="flex gap-10 max-h-min items-center mb-7">
-            <Image src={productvector} alt="vector" className="" />
+          <div className="flex justify-between gap-2 items-center mb-7 w-full max-w-xs md:max-w-sm mx-14">
+            <Image src={productvector} alt="vector" className="max-w-[25%] sm:max-w-[20%] md:max-w-[25%] lg:max-w-[30%] xl:max-w-full h-auto flex-shrink-0" />
             <h5 className="text-primary font-semibold text-wr3xl">Product</h5>
-            <Image src={productvector} alt="vector" className="scale-x-[-1]" />
+            <Image src={productvector} alt="vector" className="scale-x-[-1] max-w-[25%] sm:max-w-[20%] md:max-w-[25%] lg:max-w-[30%] xl:max-w-full h-auto flex-shrink-0" />
           </div>
-          <div className="grid grid-cols-3 gap-8 w-full px-9 mb-7">
-            <div className="h-96 rounded-3xl bg-[#E6CCB2] w-full"></div>
-            <div className="h-96 rounded-3xl bg-[#E6CCB2] w-full"></div>
-            <div className="h-96 rounded-3xl bg-[#E6CCB2] w-full"></div>
+          <div className="overflow-y-auto w-full">
+            <div className="grid min-w-[1024px] grid-cols-3 gap-2 md:gap-4 lg:gap-6 xl:gap-8 w-full px-9 mb-7">
+              <div className="h-96 rounded-3xl bg-[#E6CCB2] w-full"></div>
+              <div className="h-96 rounded-3xl bg-[#E6CCB2] w-full"></div>
+              <div className="h-96 rounded-3xl bg-[#E6CCB2] w-full"></div>
+            </div>
           </div>
+
           <button className="flex">
             <p className="text-primary font-semibold text-wrXl pr-2">Show More</p>
-            <Image src={downarrow} alt="down arrow" className="w-5"/>
+            <Image src={downarrow} alt="down arrow" className="w-5" />
           </button>
         </div>
       </section>
