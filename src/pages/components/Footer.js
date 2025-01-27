@@ -19,7 +19,7 @@ export default function Footer(){
                     <Link href="/#home" className="font-extrabold text-wrXl">Contact Us</Link>
                 </div>
                 <div className="h-px w-full bg-black/37 mb-6"></div>
-                <div className="flex gap-12 max-h-8">
+                <div className="flex gap-12 max-h-8 max-w-3xs">
                     <Image src={twitter} width={100} height={100} />
                     <Image src={instagram} width={100} height={100} />
                     <Image src={whatsapp} width={100} height={100} />
