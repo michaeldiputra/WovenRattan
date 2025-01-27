@@ -7,7 +7,7 @@ import whatsapp from "../../../public/components/whatsapp.svg";
 
 export default function Footer(){
     return(
-        <footer className="pb-6 sm:pb-29 pt-29 flex sm:justify-center landing-container">
+        <footer id="footer" className="pb-6 sm:pb-29 pt-29 flex sm:justify-center landing-container">
             <div className="sm:text-center flex flex-col sm:items-center max-w-7xl w-full sm:w-fit">
                 <h1 className="font-medium font-Montserrat text-2xl mb-17">
                     Logo

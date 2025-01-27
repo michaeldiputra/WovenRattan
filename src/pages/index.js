@@ -108,30 +108,32 @@ export default function Home() {
   return (
     <>
 
-      <section className="landing-container overflow-hidden hidden md:block">
-        <div className="max-w-7xl w-full">
-          <div className="hidden max-h-svh h-screen pt-16 w-full justify-between items-center md:flex">
-            <div className="flex flex-col w-full max-w-md -mt-28">
-              <h1 className="text-secondary text-wr6xl font-extrabold text-pretty leading-tight! uppercase pb-8">Lorem ipsum dolor sit amet</h1>
-              <button className="bg-[#B08968] text-white w-fit font-extrabold py-3 px-4 rounded-2xl">Learn More</button>
-            </div>
-            <div className="min-w-96 h-fit flex items-center -mr-60 lg:-mr-72 xl:-mr-80 relative">
-              <Image src={HomeBg} alt="bg-picture" className="max-h-screen -mt-8" />
+      <section id="home">
+        <div className="landing-container overflow-hidden hidden md:block">
+          <div className="max-w-7xl w-full">
+            <div className="hidden max-h-svh h-screen pt-16 w-full justify-between items-center md:flex">
+              <div className="flex flex-col w-full max-w-md -mt-28">
+                <h1 className="text-secondary text-wr6xl font-extrabold text-pretty leading-tight! uppercase pb-8">Lorem ipsum dolor sit amet</h1>
+                <Link href="/#product" className="bg-[#B08968] text-white w-fit font-extrabold py-3 px-4 rounded-2xl">Learn More</Link>
+              </div>
+              <div className="min-w-96 h-fit flex items-center -mr-60 lg:-mr-72 xl:-mr-80 relative">
+                <Image src={HomeBg} alt="bg-picture" className="max-h-screen -mt-8" />
+              </div>
             </div>
           </div>
         </div>
-      </section>
-      <section className="md:hidden">
-        <div className="landing-container items-center flex flex-col text-center pt-6 bg-[url('/landing/mobile-home-background.png')] bg-center bg-no-repeat bg-cover">
-          <h1 className="text-secondary text-wr6xl font-extrabold text-pretty leading-tight! uppercase pb-8">Lorem ipsum dolor sit amet</h1>
-          <Image src={homebag} width={500} height={500} />
-          <p className="text-[#B08968] font-Open-sans font-semibold text-wrXl text-pretty">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sodales nisl vel eros maximus, nec bibendum nulla vestibulum. Pellentesque euismod ex odio, sed faucibus est varius quis.
-          </p>
+        <div className="md:hidden">
+          <div className="landing-container items-center flex flex-col text-center pt-6 bg-[url('/landing/mobile-home-background.png')] bg-center bg-no-repeat bg-cover">
+            <h1 className="text-secondary text-wr6xl font-extrabold text-pretty leading-tight! uppercase pb-8">Lorem ipsum dolor sit amet</h1>
+            <Image src={homebag} width={500} height={500} />
+            <p className="text-[#B08968] font-Open-sans font-semibold text-wrXl text-pretty">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sodales nisl vel eros maximus, nec bibendum nulla vestibulum. Pellentesque euismod ex odio, sed faucibus est varius quis.
+            </p>
+          </div>
         </div>
       </section>
-      
-      <section className="landing-container">
+
+      <section id="about" className="landing-container">
         <div className="max-w-7xl w-full">
           <div className="flex justify-center py-20">
             <div className="flex flex-col-reverse md:flex-row max-w-4xl w-full bg-[#B08968] p-3 sm:p-5 md:p-7 bg-[url('/landing/rattan-bg-aboutus.png')] bg-no-repeat bg-right-bottom	">
@@ -152,7 +154,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="landing-container bg-primary">
+      <section id="why-us" className="landing-container bg-primary">
         <div className="max-w-7xl w-full flex flex-col items-center py-4">
           <h5 className="capitalize mb-9 font-Montserrat font-bold text-wr3xl text-white text-center text-pretty">reason to choose us</h5>
           <div className="flex max-w-md sm:max-w-xl lg:max-w-2xl justify-around w-full px-2.5 flex-wrap items-center gap-x-10 gap-y-7">
@@ -172,7 +174,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="landing-container py-7">
+      <section id="product" className="landing-container py-7">
         <div className="max-w-7xl w-full flex flex-col items-center">
           <div className="flex justify-between gap-2 items-center mb-7 w-full max-w-xs md:max-w-sm mx-14">
             <Image src={productvector} width={100} height={100} alt="vector" className="max-w-[25%] sm:max-w-[20%] md:max-w-[25%] lg:max-w-[30%] xl:max-w-full h-auto shrink-0" />
@@ -225,7 +227,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="landing-container">
+      <section id="rating" className="landing-container">
         <div className="max-w-7xl w-full flex pt-15 flex-col md:flex-row">
           <h5 className="text-primary font-bold text-wr4xl font-Montserrat w-full md:w-5/11 mr-16 mt-5 mb-4 pl-3 xl:pl-11 ">what do they say about our products?</h5>
           <div className="relative end-0 w-full">
@@ -252,7 +254,7 @@ export default function Home() {
                           {Array.from({ length: rating.stars }).map((_, index) => (
                             <Image key={index} src={star} alt={star} width={16} height={16} className="size-3 md:size-4 lg:size-4.5 xl:size-5 fill-inherit" />
                           ))}
-                          {Array.from({ length: 5 - rating.stars}).map((_, index) => (
+                          {Array.from({ length: 5 - rating.stars }).map((_, index) => (
                             <Image key={index} src={starempty} alt={star} width={16} height={16} className="w-5 h-5" />
                           ))}
                         </div>
