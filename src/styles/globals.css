@@ -47,6 +47,43 @@ body {
   font-family: "Poppins", Arial, Helvetica, sans-serif;
 }
 
+body::-webkit-scrollbar {
+  width: 15px;
+  height: 20px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #D6B08B;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #A1662C;
+  border-radius: 2px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background: #A1662C;
+}
+
+.scrollbar::-webkit-scrollbar {
+  width: 10px;
+  height: 20px;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+  border-radius: 100vh;
+  background: #D6B08B;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  background: #A1662C;
+  border-radius: 100vh;
+}
+
+.scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #A1662C;
+}
+
 .landing-container{
   @apply  flex justify-center px-5 md:px-12 lg:px-16 xl:px-20 ;
 }

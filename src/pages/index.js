@@ -4,9 +4,11 @@ import Link from 'next/link'
 import pictureBgHome from "../../public/landing/picture-bg-home.svg";
 import briefcase from "../../public/landing/briefcase.svg";
 import leaf from "../../public/landing/leaf.svg";
-import star from "../../public/landing/star.svg";
+import aesthetic from "../../public/landing/aesthetic.svg";
 import productvector from "../../public/landing/product-vector.svg";
 import downarrow from "../../public/landing/down-arrow.svg";
+// import star from "../../public/landing/rating/star.svg"
+// import starempty from "../../public/landing/rating/starempty.svg";
 
 export default function Home() {
   const productImages = ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg', '7.jpg', '8.jpg', '9.jpg', '10.jpg'];
@@ -16,6 +18,91 @@ export default function Home() {
   const showHandler = () => {
     setVisibleCount((prevCount) => (prevCount === 3 ? 9 : 3)); // Tampilkan hingga 9 gambar
   };
+
+  const ratings = [
+    {
+      id: 1,
+      avatar: "user1.jpg",
+      name: "John Doe",
+      date: "2025-01-22",
+      description: "Produk ini sangat luar biasa! Kualitasnya melebihi ekspektasi.",
+      stars: 5,
+    },
+    {
+      id: 2,
+      avatar: "",
+      name: "Jane Smith",
+      date: "2025-01-21",
+      description: "Pelayanan cepat dan produk berkualitas tinggi. Sangat memuaskan!",
+      stars: 5,
+    },
+    {
+      id: 3,
+      avatar: "",
+      name: "Alice Johnson",
+      date: "2025-01-20",
+      description: "Sangat puas dengan produk ini. Pengemasan juga sangat rapi.",
+      stars: 5,
+    },
+    {
+      id: 4,
+      avatar: "",
+      name: "Michael Brown",
+      date: "2025-01-19",
+      description: "Produk sempurna dan sesuai deskripsi. Pengiriman juga cepat.",
+      stars: 5,
+    },
+    {
+      id: 5,
+      avatar: "",
+      name: "Emily Davis",
+      date: "2025-01-18",
+      description: "Tidak ada kekurangan. Sangat puas dengan kualitas dan layanan!",
+      stars: 5,
+    },
+    {
+      id: 6,
+      avatar: "",
+      name: "Daniel Wilson",
+      date: "2025-01-17",
+      description: "Kualitas produk sangat bagus, tidak ada cacat. Terima kasih!",
+      stars: 5,
+    },
+    {
+      id: 7,
+      avatar: "",
+      name: "Sophia Martinez",
+      date: "2025-01-16",
+      description: "Produk premium dengan harga terjangkau. Sangat recommended!",
+      stars: 5,
+    },
+    {
+      id: 8,
+      avatar: "",
+      name: "Ethan Anderson",
+      date: "2025-01-15",
+      description: "Luar biasa! Saya akan membeli lagi produk dari toko ini.",
+      stars: 5,
+    },
+    {
+      id: 9,
+      avatar: "",
+      name: "Olivia Taylor",
+      date: "2025-01-14",
+      description: "Sangat puas dengan hasilnya. Produk ini benar-benar berkualitas!",
+      stars: 5,
+    },
+    {
+      id: 10,
+      avatar: "",
+      name: "William Thomas",
+      date: "2025-01-13",
+      description: "Semua sesuai ekspektasi. Sangat direkomendasikan untuk siapa saja.",
+      stars: 5,
+    },
+  ];
+
+
   return (
     <>
 
@@ -67,7 +154,7 @@ export default function Home() {
               <p className="text-white font-medium text-wr2xl">Comfort</p>
             </div>
             <div className="flex flex-col items-center max-w-min justify-between">
-              <Image src={star} alt="Comfort" className="mb-2.5 px-3 opacity-80 drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)] w-full" />
+              <Image src={aesthetic} alt="Comfort" className="mb-2.5 px-3 opacity-80 drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)] w-full" />
               <p className="text-white font-medium text-wr2xl">Aesthetic</p>
             </div>
           </div>
@@ -88,7 +175,6 @@ export default function Home() {
                   src={`/landing/product/${productImage}`}
                   alt={`Product ${index + 1}`}
                   width={500} height={500}
-                  objectFit="cover"
                   className="rounded-3xl w-full min-h-full object-cover"
                   priority={index < 3} // Prioritize loading for the first 3 images
                 />
@@ -129,16 +215,35 @@ export default function Home() {
       </section>
 
       <section className="landing-container">
-        <div className="max-w-7xl w-full px-11 flex">
-          <h5 className="text-primary font-bold text-wr4xl font-Montserrat w-2/5 text-balance mr-16">what do they say about our products?</h5>
-          <div className="flex ">
-            <div className="rounded-full overflow-hidden flex justify-center items-center size-16">
-              <Image src={"/landing/rating/1.jpg"} width={100} height={100} className="w-full min-h-full object-cover"/>
-            </div>
-            <div>
-              <p className="font-bold text-wrSm font-Montserrat">Nelson mandela</p>
-              <p className="font-bold text-wrXs font-Montserrat">12 November 2025</p>
-              <p className="font-bold text-wrSm font-Montserrat">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices placerat fermentum. Maecenas faucibus scelerisque mi id gravida. In a lorem a turpis aliquet sodales. Sed a velit pharetra, luctus nunc malesuada, posuere risus.</p>
+        <div className="max-w-7xl w-full pl-11 flex pt-15 ">
+          <h5 className="text-primary font-bold text-wr4xl font-Montserrat w-5/11 mr-16 mt-5">what do they say about our products?</h5>
+          <div className="relative end-0">
+            <div className="w-19/20 h-28 absolute bg-linear-to-t from-background to-transparent -bottom-1"></div>
+            <div className="overflow-y-scroll snap-y snap-mandatory h-109 scrollbar">
+              <div className="flex flex-col gap-4 mb-28 mr-6">
+                {ratings.map((rating) => (
+                  <div className="flex rounded-3xl px-5 py-3 bg-[#D6B08B] h-fit snap-start">
+                    <div className="rounded-full overflow-hidden flex justify-center items-center h-16 w-full max-w-16">
+                      <Image src={`/landing/rating/${rating.avatar ? rating.avatar : "user.svg"}`}
+                        width={100} height={100}
+                        className="w-full min-h-full object-cover " />
+                    </div>
+                    <div className="ml-2.5">
+                      <div>
+                        <div>
+                          <div>
+                            <p className="font-bold text-wrSm font-Montserrat text-[#562400] leading-2">{rating.name}</p>
+                            <p className="font-bold text-wrXs font-Montserrat text-primary mb-3">{rating.date}</p>
+                          </div>
+                          <div>
+                          </div>
+                        </div>
+                      </div>
+                      <p className="font-bold text-wrSm font-Montserrat text-primary">{rating.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
