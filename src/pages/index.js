@@ -1,7 +1,8 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from 'next/link'
-import pictureBgHome from "../../public/landing/picture-bg-home.svg";
+import HomeBg from "../../public/landing/home-background.png";
+import MobileHomeBg from "../../public/landing/mobile-home-background.png";
 import briefcase from "../../public/landing/briefcase.svg";
 import leaf from "../../public/landing/leaf.svg";
 import aesthetic from "../../public/landing/aesthetic.svg";
@@ -9,6 +10,7 @@ import productvector from "../../public/landing/product-vector.svg";
 import downarrow from "../../public/landing/down-arrow.svg";
 import star from "../../public/landing/rating/star.svg"
 import starempty from "../../public/landing/rating/starempty.svg";
+import homebag from "../../public/landing/home-bag.png";
 
 export default function Home() {
   const productImages = ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg', '7.jpg', '8.jpg', '9.jpg', '10.jpg'];
@@ -106,20 +108,29 @@ export default function Home() {
   return (
     <>
 
-      <section className="landing-container overflow-hidden">
+      <section className="landing-container overflow-hidden hidden md:block">
         <div className="max-w-7xl w-full">
-          <div className="flex max-h-svh h-screen pt-16 w-full justify-between items-center">
+          <div className="hidden max-h-svh h-screen pt-16 w-full justify-between items-center md:flex">
             <div className="flex flex-col w-full max-w-md -mt-28">
               <h1 className="text-secondary text-wr6xl font-extrabold text-pretty leading-tight! uppercase pb-8">Lorem ipsum dolor sit amet</h1>
               <button className="bg-[#B08968] text-white w-fit font-extrabold py-3 px-4 rounded-2xl">Learn More</button>
             </div>
-            <div className="min-w-96 h-fit flex items-center -mr-60 lg:-mr-72 xl:-mr-80">
-              <Image src={pictureBgHome} alt="bg-picture" className="max-h-screen -mt-8" />
+            <div className="min-w-96 h-fit flex items-center -mr-60 lg:-mr-72 xl:-mr-80 relative">
+              <Image src={HomeBg} alt="bg-picture" className="max-h-screen -mt-8" />
             </div>
           </div>
         </div>
       </section>
-
+      <section className="md:hidden">
+        <div className="landing-container items-center flex flex-col text-center pt-6 bg-[url('/landing/mobile-home-background.png')] bg-center bg-no-repeat bg-cover">
+          <h1 className="text-secondary text-wr6xl font-extrabold text-pretty leading-tight! uppercase pb-8">Lorem ipsum dolor sit amet</h1>
+          <Image src={homebag} width={500} height={500} />
+          <p className="text-[#B08968] font-Open-sans font-semibold text-wrXl text-pretty">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sodales nisl vel eros maximus, nec bibendum nulla vestibulum. Pellentesque euismod ex odio, sed faucibus est varius quis.
+          </p>
+        </div>
+      </section>
+      {/* 
       <section className="landing-container">
         <div className="max-w-7xl w-full">
           <div className="flex justify-center py-20">
@@ -212,7 +223,7 @@ export default function Home() {
             </div>
           )}
         </div>
-      </section>
+      </section> */}
 
       <section className="landing-container">
         <div className="max-w-7xl w-full flex pt-15 flex-col md:flex-row">
@@ -235,8 +246,8 @@ export default function Home() {
                       <div className="flex justify-between w-full">
                         <div>
                           <p className="font-bold text-wrSm font-Montserrat text-[#562400] leading-2 mb-0.5">{rating.name}</p>
-                            <p className="font-bold text-wrXs font-Montserrat text-primary mb-3">{rating.date}</p>
-                          </div>
+                          <p className="font-bold text-wrXs font-Montserrat text-primary mb-3">{rating.date}</p>
+                        </div>
                         <div className="flex">
                           {Array.from({ length: rating.stars }).map((_, index) => (
                             <Image key={index} src={star} alt={star} width={16} height={16} className="size-3 md:size-4 lg:size-4.5 xl:size-5" />
@@ -251,7 +262,7 @@ export default function Home() {
                   </div>
                 ))}
                 <div className="flex rounded-3xl px-5 py-10 bg-[#D6B08B] h-fit snap-start justify-center">
-                <p className="font-bold text-wrSm font-Montserrat text-[#562400] leading-2 text-center"></p>
+                  <p className="font-bold text-wrSm font-Montserrat text-[#562400] leading-2 text-center"></p>
                 </div>
               </div>
             </div>
