@@ -130,7 +130,7 @@ export default function Home() {
           </p>
         </div>
       </section>
-      {/* 
+      
       <section className="landing-container">
         <div className="max-w-7xl w-full">
           <div className="flex justify-center py-20">
@@ -223,7 +223,7 @@ export default function Home() {
             </div>
           )}
         </div>
-      </section> */}
+      </section>
 
       <section className="landing-container">
         <div className="max-w-7xl w-full flex pt-15 flex-col md:flex-row">
@@ -250,11 +250,11 @@ export default function Home() {
                         </div>
                         <div className="flex">
                           {Array.from({ length: rating.stars }).map((_, index) => (
-                            <Image key={index} src={star} alt={star} width={16} height={16} className="size-3 md:size-4 lg:size-4.5 xl:size-5" />
+                            <Image key={index} src={star} alt={star} width={16} height={16} className="size-3 md:size-4 lg:size-4.5 xl:size-5 fill-inherit" />
                           ))}
-                          {/* {Array.from({ length: 5 - rating.stars}).map((_, index) => (
+                          {Array.from({ length: 5 - rating.stars}).map((_, index) => (
                             <Image key={index} src={starempty} alt={star} width={16} height={16} className="w-5 h-5" />
-                          ))} */}
+                          ))}
                         </div>
                       </div>
                       <p className="font-bold text-wrSm font-Montserrat text-primary">{rating.description}</p>
