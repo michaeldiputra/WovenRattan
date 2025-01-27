@@ -7,8 +7,8 @@ import leaf from "../../public/landing/leaf.svg";
 import aesthetic from "../../public/landing/aesthetic.svg";
 import productvector from "../../public/landing/product-vector.svg";
 import downarrow from "../../public/landing/down-arrow.svg";
-// import star from "../../public/landing/rating/star.svg"
-// import starempty from "../../public/landing/rating/starempty.svg";
+import star from "../../public/landing/rating/star.svg"
+import starempty from "../../public/landing/rating/starempty.svg";
 
 export default function Home() {
   const productImages = ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg', '7.jpg', '8.jpg', '9.jpg', '10.jpg'];
@@ -50,7 +50,7 @@ export default function Home() {
       name: "Michael Brown",
       date: "2025-01-19",
       description: "Produk sempurna dan sesuai deskripsi. Pengiriman juga cepat.",
-      stars: 5,
+      stars: 4,
     },
     {
       id: 5,
@@ -74,7 +74,7 @@ export default function Home() {
       name: "Sophia Martinez",
       date: "2025-01-16",
       description: "Produk premium dengan harga terjangkau. Sangat recommended!",
-      stars: 5,
+      stars: 4,
     },
     {
       id: 8,
@@ -98,7 +98,7 @@ export default function Home() {
       name: "William Thomas",
       date: "2025-01-13",
       description: "Semua sesuai ekspektasi. Sangat direkomendasikan untuk siapa saja.",
-      stars: 5,
+      stars: 4,
     },
   ];
 
@@ -215,34 +215,44 @@ export default function Home() {
       </section>
 
       <section className="landing-container">
-        <div className="max-w-7xl w-full pl-11 flex pt-15 ">
-          <h5 className="text-primary font-bold text-wr4xl font-Montserrat w-5/11 mr-16 mt-5">what do they say about our products?</h5>
-          <div className="relative end-0">
-            <div className="w-19/20 h-28 absolute bg-linear-to-t from-background to-transparent -bottom-1"></div>
+        <div className="max-w-7xl w-full flex pt-15 flex-col md:flex-row">
+          <h5 className="text-primary font-bold text-wr4xl font-Montserrat w-full md:w-5/11 mr-16 mt-5 mb-4 pl-3 xl:pl-11 ">what do they say about our products?</h5>
+          <div className="relative end-0 w-full">
+            <div className="pr-1 md:pr-4 lg:pr-5 xl:pr-6 w-full absolute -bottom-1">
+              <div className="w-full h-28 bg-linear-to-t from-background to-transparent">
+              </div>
+            </div>
             <div className="overflow-y-scroll snap-y snap-mandatory h-109 scrollbar">
-              <div className="flex flex-col gap-4 mb-28 mr-6">
+              <div className="flex flex-col gap-1 sm:gap-2 md:gap-3 xl:gap-4 mr-1 md:mr-4 lg:mr-5 xl:mr-6">
                 {ratings.map((rating) => (
                   <div className="flex rounded-3xl px-5 py-3 bg-[#D6B08B] h-fit snap-start">
-                    <div className="rounded-full overflow-hidden flex justify-center items-center h-16 w-full max-w-16">
+                    <div className="rounded-full overflow-hidden flex justify-center items-center h-10 md:h-16 w-full max-w-10 md:max-w-16">
                       <Image src={`/landing/rating/${rating.avatar ? rating.avatar : "user.svg"}`}
                         width={100} height={100}
                         className="w-full min-h-full object-cover " />
                     </div>
-                    <div className="ml-2.5">
-                      <div>
+                    <div className="ml-2.5 w-full">
+                      <div className="flex justify-between w-full">
                         <div>
-                          <div>
-                            <p className="font-bold text-wrSm font-Montserrat text-[#562400] leading-2">{rating.name}</p>
+                          <p className="font-bold text-wrSm font-Montserrat text-[#562400] leading-2 mb-0.5">{rating.name}</p>
                             <p className="font-bold text-wrXs font-Montserrat text-primary mb-3">{rating.date}</p>
                           </div>
-                          <div>
-                          </div>
+                        <div className="flex">
+                          {Array.from({ length: rating.stars }).map((_, index) => (
+                            <Image key={index} src={star} alt={star} width={16} height={16} className="size-3 md:size-4 lg:size-4.5 xl:size-5" />
+                          ))}
+                          {/* {Array.from({ length: 5 - rating.stars}).map((_, index) => (
+                            <Image key={index} src={starempty} alt={star} width={16} height={16} className="w-5 h-5" />
+                          ))} */}
                         </div>
                       </div>
                       <p className="font-bold text-wrSm font-Montserrat text-primary">{rating.description}</p>
                     </div>
                   </div>
                 ))}
+                <div className="flex rounded-3xl px-5 py-10 bg-[#D6B08B] h-fit snap-start justify-center">
+                <p className="font-bold text-wrSm font-Montserrat text-[#562400] leading-2 text-center"></p>
+                </div>
               </div>
             </div>
           </div>

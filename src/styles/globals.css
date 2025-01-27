@@ -66,8 +66,7 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .scrollbar::-webkit-scrollbar {
-  width: 10px;
-  height: 20px;
+  @apply w-1 md:w-2.5;
 }
 
 .scrollbar::-webkit-scrollbar-track {
@@ -112,8 +111,8 @@ body::-webkit-scrollbar-thumb:hover {
     @apply text-xs sm:text-sm md:text-sm lg:text-base;
 }
 .text-wrSm{
-  @apply text-[65rem] sm:text-xs md:text-xs lg:text-sm;
+  @apply text-[0.65rem] sm:text-xs md:text-xs lg:text-sm;
 }
-.textwrXs{
-  @apply text-[60rem] sm:text-[65rem] md:text-[65rem] lg:text-xs;
+.text-wrXs{
+  @apply text-[0.60rem] sm:text-[0.65rem] md:text-[0.65rem] lg:text-xs;
 }
