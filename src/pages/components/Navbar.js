@@ -35,7 +35,7 @@ export default function Navbar() {
                             <div className="h-1 w-4/5 bg-primary -translate-x-full group-hover:translate-x-0 transition-transform"></div>
                         </Link>
                     </div>
-                    <div>
+                    <div className='md:hidden'>
                         <button onClick={handleNav} className="h-full">
                             <Image src={hamburger} width={10} height={10} className="h-auto w-auto" />
                         </button>
