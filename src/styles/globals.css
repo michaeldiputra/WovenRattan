@@ -32,6 +32,7 @@
 :root {
   --background: #EDE0D4;
   --foreground: #171717;
+  scroll-padding-top: 4.375rem;
 }
 
 /* @media (prefers-color-scheme: dark) {

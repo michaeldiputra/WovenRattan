@@ -107,8 +107,7 @@ export default function Home() {
 
   return (
     <>
-
-      <section id="home">
+      <section className="pb-20" id="home">
         <div className="landing-container overflow-hidden hidden md:block">
           <div className="max-w-7xl w-full">
             <div className="hidden max-h-svh h-screen pt-16 w-full justify-between items-center md:flex">
@@ -135,7 +134,7 @@ export default function Home() {
 
       <section id="about" className="landing-container">
         <div className="max-w-7xl w-full">
-          <div className="flex justify-center py-20">
+          <div className="flex justify-center pb-20">
             <div className="flex flex-col-reverse md:flex-row max-w-4xl w-full bg-[#B08968] p-3 sm:p-5 md:p-7 bg-[url('/landing/rattan-bg-aboutus.png')] bg-no-repeat bg-right-bottom	">
               <div className="md:max-w-80 w-full grid grid-cols-2 h-96 sm:h-[488px] gap-1.5 sm:gap-2.5 md:gap-4">
                 <div className="w-full bg-[#E6CCB2] row-span-3"></div>
