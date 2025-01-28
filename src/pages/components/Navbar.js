@@ -58,7 +58,7 @@ export default function Navbar() {
                     </Link>
                     <Link onClick={handleNav} href="/#footer" className="overflow-hidden group transition-transform">
                         <h5 className="">Contact Us</h5>
-                        <div className="h-1 w-4/5 bg-primary -translate-x-full group-hover:translate-x-0 transition-transform -ml-px"></div>
+                        <div className="h-1 w-3/5 bg-primary -translate-x-full group-hover:translate-x-0 transition-transform -ml-px"></div>
                     </Link>
                 </div>
             </div>
