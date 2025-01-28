@@ -113,7 +113,7 @@ export default function Home() {
             <div className="hidden max-h-svh h-screen pt-16 w-full justify-between items-center md:flex">
               <div className="flex flex-col w-full max-w-md -mt-28">
                 <h1 className="text-secondary text-wr6xl font-extrabold text-pretty leading-tight! uppercase pb-8">Lorem ipsum dolor sit amet</h1>
-                <Link href="/#product" className="bg-[#B08968] hover:bg-primary text-white w-fit font-extrabold py-3 px-4 rounded-2xl">Learn More</Link>
+                <Link href="/#product" className="bg-[#B08968] hover:bg-primary text-white w-fit font-extrabold py-3 px-4 rounded-2xl font-Raleway">Learn More</Link>
               </div>
               <div className="min-w-96 h-fit flex items-center -mr-60 lg:-mr-72 xl:-mr-80 relative">
                 <Image src={HomeBg} alt="bg-picture" className="max-h-screen -mt-8" />
@@ -251,10 +251,10 @@ export default function Home() {
                         </div>
                         <div className="flex">
                           {Array.from({ length: rating.stars }).map((_, index) => (
-                            <Image key={index} src={star} alt={star} width={16} height={16} className="size-3 md:size-4 lg:size-4.5 xl:size-5 fill-inherit" />
+                            <Image key={index} src={star} alt={star} width={16} height={16} className="size-3 md:size-4 lg:size-4.5 xl:size-5" />
                           ))}
                           {Array.from({ length: 5 - rating.stars }).map((_, index) => (
-                            <Image key={index} src={starempty} alt={star} width={16} height={16} className="w-5 h-5" />
+                            <Image key={index} src={starempty} alt={star} width={16} height={16} className="size-3 md:size-4 lg:size-4.5 xl:size-5" />
                           ))}
                         </div>
                       </div>

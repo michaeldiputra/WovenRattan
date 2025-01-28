@@ -13,7 +13,7 @@ export default function Navbar() {
     };
 
     return (
-        <nav className="sticky w-full top-0 z-99">
+        <nav className="sticky w-full top-0 z-99 font-Raleway">
             <div className="backdrop-filter backdrop-blur-lg pt-5 pb-4 landing-container">
                 <div className="max-w-7xl w-full flex justify-between items-center">
                     <span className="text-gray-700 font-Montserrat font-extrabold text-xl">LOGO</span>
