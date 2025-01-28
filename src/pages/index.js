@@ -2,8 +2,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from 'next/link'
 import { products } from "./products";
-import HomeBg from "../../public/landing/home-background.png";
-import MobileHomeBg from "../../public/landing/mobile-home-background.png";
+import HomeBg from "../../public/landing/home-background.svg";
 import briefcase from "../../public/landing/briefcase.svg";
 import leaf from "../../public/landing/leaf.svg";
 import aesthetic from "../../public/landing/aesthetic.svg";
@@ -12,9 +11,9 @@ import downarrow from "../../public/landing/down-arrow.svg";
 import star from "../../public/landing/rating/star.svg"
 import starempty from "../../public/landing/rating/starempty.svg";
 import homebag from "../../public/landing/home-bag.png";
+import dekstopHomeBag from "../../public/landing/dekstop-home-bag.png";
 
 export default function Home() {
-  const productImages = ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg', '7.jpg', '8.jpg', '9.jpg', '10.jpg'];
 
   const [visibleCount, setVisibleCount] = useState(3); // Mulai dari 3 gambar
 
@@ -111,13 +110,14 @@ export default function Home() {
       <section className="pb-20" id="home">
         <div className="landing-container overflow-hidden hidden md:block">
           <div className="max-w-7xl w-full">
-            <div className="hidden max-h-svh h-screen pt-16 w-full justify-between items-center md:flex">
+            <div className="hidden max-h-svh h-screen w-full justify-between items-center md:flex">
               <div className="flex flex-col w-full max-w-md -mt-28">
-                <h1 className="text-secondary text-wr6xl font-extrabold text-pretty leading-tight! uppercase pb-8">Lorem ipsum dolor sit amet</h1>
+                <h1 className="text-primary text-wr6xl font-extrabold text-pretty leading-tight! uppercase pb-8">Lorem ipsum dolor sit amet</h1>
                 <Link href="/#product" className="bg-[#B08968] hover:bg-primary text-white w-fit font-extrabold py-3 px-4 rounded-2xl font-Raleway">Learn More</Link>
               </div>
-              <div className="min-w-96 h-fit flex items-center -mr-60 lg:-mr-72 xl:-mr-80 relative">
-                <Image src={HomeBg} alt="bg-picture" className="max-h-screen -mt-8" />
+              <div className="relative -mr-60 lg:-mr-72 xl:-mr-80 max-h-[90svh]">
+                <Image src={dekstopHomeBag} alt="Rottan Bag" className="absolute" />
+                <Image src={HomeBg} alt="bg-picture" className="h-full w-auto" />
               </div>
             </div>
           </div>
