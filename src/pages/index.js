@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from 'next/link'
+import { products } from "./products";
 import HomeBg from "../../public/landing/home-background.png";
 import MobileHomeBg from "../../public/landing/mobile-home-background.png";
 import briefcase from "../../public/landing/briefcase.svg";
@@ -173,7 +174,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="product" className="landing-container py-7">
+      <section id="product" className="landing-container py-7 transition-all">
         <div className="max-w-7xl w-full flex flex-col items-center">
           <div className="flex justify-between gap-2 items-center mb-7 w-full max-w-xs md:max-w-sm mx-14">
             <Image src={productvector} width={100} height={100} alt="vector" className="max-w-[25%] sm:max-w-[20%] md:max-w-[25%] lg:max-w-[30%] xl:max-w-full h-auto shrink-0" />
@@ -181,10 +182,10 @@ export default function Home() {
             <Image src={productvector} width={100} height={100} alt="vector" className="scale-x-[-1] max-w-[25%] sm:max-w-[20%] md:max-w-[25%] lg:max-w-[30%] xl:max-w-full shrink-0" />
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 md:gap-4 lg:gap-6 xl:gap-8 w-full mb-2.5 sm:mb-7">
-            {productImages.slice(0, visibleCount).map((productImage, index) => (
+            {products.slice(0, visibleCount).map((product, index) => (
               <div key={index} className="max-h-96 rounded-3xl overflow-hidden flex justify-center items-center">
                 <Image
-                  src={`/landing/product/${productImage}`}
+                  src={`/landing/product/${product.image}`}
                   alt={`Product ${index + 1}`}
                   width={500} height={500}
                   className="rounded-3xl w-full min-h-full object-cover"
